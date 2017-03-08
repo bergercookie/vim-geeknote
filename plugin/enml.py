@@ -16,7 +16,7 @@ def ENMLtoText(contentENML):
 
     if format == 'vim-default' or format == 'pre':
         try:
-            soup = BeautifulSoup(contentENML.decode('utf-8'))
+            soup = BeautifulSoup(contentENML.decode('utf-8'), 'lxml')
             sections = soup.select('pre')
             if len(sections) >= 1:
                 content = ''
